@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin tức - Giày Thể Thao</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/trangchu.css">
+    <link rel="stylesheet" href="../css/tintuc.css">
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+</head>
+<body>
+
+    <main class="news-page">
+        <div class="container">
+            <div class="news-header">
+                <h1>📰 TIN TỨC</h1>
+                <p>Cập nhật những thông tin mới nhất từ cửa hàng</p>
+            </div>
+
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">📢</div>
+                    <div class="news-content">
+                        <div class="news-date">30/04/2024</div>
+                        <div class="news-title">Sale khủng - Giảm giá đến 50%</div>
+                        <div class="news-description">Cơ hội vàng để sở hữu những đôi giày yêu thích với mức giá ưu đãi nhất. Hạn chế thời gian, chỉ trong tháng 4.</div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">👟</div>
+                    <div class="news-content">
+                        <div class="news-date">25/04/2024</div>
+                        <div class="news-title">Ra mắt bộ sưu tập mùa hè 2024</div>
+                        <div class="news-description">Khám phá những mẫu giày thời trang, năng động phù hợp cho mùa hè sôi động của bạn với các thiết kế mới lạ.</div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">💎</div>
+                    <div class="news-content">
+                        <div class="news-date">20/04/2024</div>
+                        <div class="news-title">Chương trình khách hàng thân thiết</div>
+                        <div class="news-description">Tích điểm mỗi lần mua hàng và đổi lấy những phần quà hấp dẫn. Triết vô hạn từ hôm nay!</div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">🚚</div>
+                    <div class="news-content">
+                        <div class="news-date">15/04/2024</div>
+                        <div class="news-title">Giao hàng miễn phí toàn quốc</div>
+                        <div class="news-description">Để tri ân khách hàng, chúng tôi cung cấp dịch vụ giao hàng miễn phí cho tất cả các đơn hàng từ 300.000đ.</div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">🏆</div>
+                    <div class="news-content">
+                        <div class="news-date">10/04/2024</div>
+                        <div class="news-title">Giải thưởng cửa hàng bán hàng uy tín số 1</div>
+                        <div class="news-description">Giày Thể Thao vinh dự nhận được giải thưởng từ Hiệp hội Thương mại Điện tử Việt Nam năm 2024.</div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">🎁</div>
+                    <div class="news-content">
+                        <div class="news-date">05/04/2024</div>
+                        <div class="news-title">Hộp quà tặng miễn phí cho mỗi đơn hàng</div>
+                        <div class="news-description">Mua sắm và nhận tặng một hộp quà đẹp kèm theo phiếu chúc mừng cho người thân yêu của bạn.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- News Detail Modal -->
+    <div id="newsModal" class="news-modal">
+        <div class="news-modal-content">
+            <button class="modal-close" onclick="closeNewsModal()">×</button>
+            <div class="modal-header">
+                <div id="newsModalIcon" class="modal-icon"></div>
+                <div>
+                    <div id="newsModalDate" class="modal-date"></div>
+                    <h2 id="newsModalTitle" class="modal-title"></h2>
+                </div>
+            </div>
+            <div id="newsModalContent" class="modal-body"></div>
+            <button class="modal-close-btn" onclick="closeNewsModal()">Đóng</button>
+        </div>
+    </div>
+
+    
+    <script src="../js/common.js"></script>
+    <script src="../js/tintuc.js"></script>
+</body>
+</html>

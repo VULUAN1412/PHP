@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Giày Thể Thao</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/giohang.css">
+    <script src="../js/navbar.js"></script>
+</head>
+<body>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="Trangchu.html">Trang chủ</a>
+                <span>></span>
+                <span>Giỏ hàng</span>
+            </div>
+
+            <section class="cart-section">
+                <h1 class="page-title">Giỏ hàng của bạn</h1>
+
+                <div class="cart-container">
+                    <!-- Cart Items -->
+                    <div class="cart-items">
+                        <div id="cartContent">
+                            <div class="empty-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                <p>Giỏ hàng của bạn đang trống</p>
+                                <a href="Trangchu.html" class="btn btn-primary">Tiếp tục mua sắm</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Summary -->
+                    <aside class="cart-summary">
+                        <h2>Tóm tắt đơn hàng</h2>
+                        
+                        <div class="summary-item">
+                            <span>Tạm tính:</span>
+                            <span id="subtotal">0₫</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span>Phí vận chuyển:</span>
+                            <span id="shipping">0₫</span>
+                        </div>
+
+                        <div class="summary-item discount">
+                            <span>Giảm giá:</span>
+                            <span id="discount">0₫</span>
+                        </div>
+
+                        <div class="summary-total">
+                            <span>Tổng cộng:</span>
+                            <span id="total">0₫</span>
+                        </div>
+
+                        <div class="promo-section">
+                            <label>Mã khuyến mại:</label>
+                            <div class="promo-input">
+                                <input type="text" id="promoCode" placeholder="Nhập mã khuyến mại">
+                                <button onclick="applyPromo()" class="btn-apply">Áp dụng</button>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-checkout" onclick="proceedToCheckout()">Thanh toán</button>
+                        <a href="Trangchu.html" class="btn btn-continue">Tiếp tục mua sắm</a>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- Related Products -->
+            <section class="related-section">
+                <h2 class="section-title">Sản phẩm có thể bạn quan tâm</h2>
+                <div class="products-grid">
+                    <div class="product-card" onclick="window.location.href='Thongtingiay.html?id=1'" style="cursor: pointer;">
+                        <div class="product-image">
+                            <img src="../images/giaychaybo/giày chạy bộ nam nike.jpg" alt="Giày chạy bộ Premium">
+                        </div>
+                        <h3 class="product-name">Giày chạy bộ Premium</h3>
+                        <p class="product-price">1.290.000<span>đ</span></p>
+                        <button class="btn btn-add-cart" onclick="event.stopPropagation(); addToCart(1, 'Giày chạy bộ Premium', 1290000)">
+                            <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+                        </button>
+                    </div>
+
+                    <div class="product-card" onclick="window.location.href='Thongtingiay.html?id=2'" style="cursor: pointer;">
+                        <div class="product-image">
+                            <img src="../images/giaythethao/nike ari max.jpg" alt="Giày thể thao Casual">
+                        </div>
+                        <h3 class="product-name">Giày thể thao Casual</h3>
+                        <p class="product-price">950.000<span>đ</span></p>
+                        <button class="btn btn-add-cart" onclick="event.stopPropagation(); addToCart(2, 'Giày thể thao Casual', 950000)">
+                            <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+                        </button>
+                    </div>
+
+                    <div class="product-card" onclick="window.location.href='Thongtingiay.html?id=3'" style="cursor: pointer;">
+                        <div class="product-image">
+                            <img src="../images/giaydabong/adidas f50 pro.jpg" alt="Giày tập Gym">
+                        </div>
+                        <h3 class="product-name">Giày tập Gym</h3>
+                        <p class="product-price">1.150.000<span>đ</span></p>
+                        <button class="btn btn-add-cart" onclick="event.stopPropagation(); addToCart(3, 'Giày tập Gym', 1150000)">
+                            <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+                        </button>
+                    </div>
+
+                    <div class="product-card" onclick="window.location.href='Thongtingiay.html?id=4'" style="cursor: pointer;">
+                        <div class="product-image">
+                            <img src="../images/giaythoitrang/retro oxford.jpg" alt="Giày chạy bộ X">
+                        </div>
+                        <h3 class="product-name">Giày chạy bộ X</h3>
+                        <p class="product-price">1.450.000<span>đ</span></p>
+                        <button class="btn btn-add-cart" onclick="event.stopPropagation(); addToCart(4, 'Giày chạy bộ X', 1450000)">
+                            <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Về Giày Thể Thao</h3>
+                    <p>Cửa hàng chuyên bán giày thể thao chính hãng, cung cấp các thương hiệu hàng đầu thế giới.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p>Email: trungkhoa0209@gmail.com</p>
+                    <p>Hotline: 0385217674</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Theo dõi</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Giày Thể Thao. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/giohang.js"></script>
+</body>
+</html>

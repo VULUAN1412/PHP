@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giày Thể Thao - Cửa hàng bán giày chuyên nghiệp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/trangchu.css">
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+</head>
+<body>
+
+    <main>
+        <div class="container">
+            <!-- Carousel Section -->
+            <section class="carousel-section">
+                <h2 class="section-title">Sale off</h2>
+                <div class="carousel">
+                    <button class="carousel-btn prev" onclick="prevCarouselSlide()"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-wrapper">
+                        <div class="carousel-items">
+                            <div class="carousel-item">
+                                <img src="../images/giaydabong/predator 20.3.jpg" alt="Giày đá bóng Predator sale">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/giaychaybo/giày chạy bộ nam adidas.jpg" alt="Giày chạy bộ Adidas sale">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/giaythoitrang/retro leadther.jpg" alt="Giày thời trang Retro sale">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next" onclick="nextCarouselSlide()"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-dots">
+                        <span class="dot active" onclick="goToCarouselSlide(0)"></span>
+                        <span class="dot" onclick="goToCarouselSlide(1)"></span>
+                        <span class="dot" onclick="goToCarouselSlide(2)"></span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="content-wrapper">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <h3 class="sidebar-title">Danh mục</h3>
+                    <ul class="category-list">
+                        <li><a href="#" class="category-link" data-category="all">Tất cả sản phẩm</a></li>
+                        <li><a href="#" class="category-link" data-category="chay-bo">Giày chạy bộ</a></li>
+                        <li><a href="#" class="category-link" data-category="the-thao">Giày thể thao</a></li>
+                        <li><a href="#" class="category-link" data-category="da-bong">Giày đá bóng</a></li>
+                        <li><a href="#" class="category-link" data-category="phu-kien">Phụ kiện</a></li>
+                        <li><a href="#" class="category-link" data-category="thoi-trang">Giày thời trang</a></li>
+                    </ul>
+
+                    <div class="product-info">
+                        <h3>Thông tin chung</h3>
+                        <p><strong>Giày chạy bộ:</strong> Được thiết kế đặc biệt để hỗ trợ vận động, giảm tác động lên khớp và cung cấp sự thoải mái tối đa khi chạy.</p>
+                        <p><strong>Giày thể thao:</strong> Đa năng, phù hợp cho nhiều hoạt động thể thao và mặc hàng ngày với phong cách năng động.</p>
+                        <p><strong>Giày đá bóng:</strong> Chuyên dụng cho môn thể thao, cung cấp độ bám tốt và hỗ trợ hiệu năng cao trên sân.</p>
+                        <p><strong>Giày thời trang:</strong> Kết hợp giữa phong cách và tiện ích, phù hợp cho mọi lúc mọi nơi.</p>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <section class="products-section">
+                    <h2 class="section-title">Sản phẩm</h2>
+                    <div class="products-grid">
+                        <div class="product-card" data-category="chay-bo">
+                            <div class="product-image" onclick="goToProductDetail()" style="cursor: pointer;">
+                                <img src="../images/giaychaybo/giày chạy bộ nike ari winflo 9.jpg" alt="Giày chạy bộ Nike" style="cursor: pointer;">
+                            </div>
+                            <h3 class="product-name">Giày chạy bộ Nike Ari Winflo 9</h3>
+                            <p class="product-price">1.290.000<span>đ</span></p>
+                        </div>
+
+                        <div class="product-card" data-category="the-thao">
+                            <div class="product-image" onclick="goToProductDetail()" style="cursor: pointer;">
+                                <img src="../images/giaythethao/nike ari max.jpg" alt="Giày thể thao Nike" style="cursor: pointer;">
+                            </div>
+                            <h3 class="product-name">Giày thể thao Nike Ari Max</h3>
+                            <p class="product-price">950.000<span>đ</span></p>
+                        </div>
+
+                        <div class="product-card sale-badge" data-category="da-bong">
+                            <div class="product-image" onclick="goToProductDetail()" style="cursor: pointer;">
+                                <div class="discount-badge">-30%</div>
+                                <img src="../images/giaydabong/predator 20.3.jpg" alt="Giày đá bóng Predator" style="cursor: pointer;">
+                            </div>
+                            <h3 class="product-name">Giày đá bóng Predator 20.3</h3>
+                            <p class="product-price">1.400.000<span>đ</span></p>
+                            <p class="product-price-old">2.000.000đ</p>
+                        </div>
+
+                        <div class="product-card" data-category="the-thao">
+                            <div class="product-image" onclick="goToProductDetail()" style="cursor: pointer;">
+                                <img src="../images/giaythethao/adidas galaxy 6.jpg" alt="Giày thể thao Adidas" style="cursor: pointer;">
+                            </div>
+                            <h3 class="product-name">Giày thể thao Adidas Galaxy 6</h3>
+                            <p class="product-price">1.150.000<span>đ</span></p>
+                        </div>
+
+                        <div class="product-card sale-badge" data-category="chay-bo">
+                            <div class="product-image" onclick="goToProductDetail()" style="cursor: pointer;">
+                                <div class="discount-badge">-25%</div>
+                                <img src="../images/giaychaybo/giày chạy bộ nam adidas.jpg" alt="Giày chạy bộ Adidas" style="cursor: pointer;">
+                            </div>
+                            <h3 class="product-name">Giày chạy bộ Adidas</h3>
+                            <p class="product-price">1.500.000<span>đ</span></p>
+                            <p class="product-price-old">2.000.000đ</p>
+                        </div>
+
+                        <div class="product-card" data-category="thoi-trang">
+                            <div class="product-image" onclick="goToProductDetail()" style="cursor: pointer;">
+                                <img src="../images/giaythoitrang/sneaker elly.jpg" alt="Giày Sneaker" style="cursor: pointer;">
+                            </div>
+                            <h3 class="product-name">Giày Sneaker Elly</h3>
+                            <p class="product-price">850.000<span>đ</span></p>
+                        </div>
+
+                        <div class="product-card sale-badge" data-category="phu-kien">
+                            <div class="product-image" onclick="goToProductDetail()" style="cursor: pointer;">
+                                <div class="discount-badge">-40%</div>
+                                <img src="../images/phukiengiay/tất yonex.jpg" alt="Phụ kiện - Tất Yonex" style="cursor: pointer;">
+                            </div>
+                            <h3 class="product-name">Phụ kiện - Tất Yonex</h3>
+                            <p class="product-price">280.000<span>đ</span></p>
+                            <p class="product-price-old">470.000đ</p>
+                        </div>
+
+                        <div class="product-card sale-badge" data-category="thoi-trang">
+                            <div class="product-image" onclick="goToProductDetail()" style="cursor: pointer;">
+                                <div class="discount-badge">-35%</div>
+                                <img src="../images/giaythoitrang/retro leadther.jpg" alt="Giày thời trang Retro" style="cursor: pointer;">
+                            </div>
+                            <h3 class="product-name">Giày thời trang Retro Leather</h3>
+                            <p class="product-price">750.000<span>đ</span></p>
+                            <p class="product-price-old">1.150.000đ</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Popups -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/trangchu.js"></script>
+</body>
+</html>

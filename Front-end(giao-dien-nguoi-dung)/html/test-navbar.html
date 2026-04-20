@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Navbar - Debug</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .debug-log {
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2ecc71;
+        }
+        .debug-log h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .debug-log p {
+            padding: 8px 0;
+            font-family: monospace;
+            font-size: 13px;
+        }
+        .success { color: #27ae60; }
+        .error { color: #e74c3c; }
+        .warning { color: #f39c12; }
+    </style>
+</head>
+<body>
+    <div class="debug-log">
+        <h2>🔍 Debug Log - Navbar & Footer Test</h2>
+        <p><strong>Loading status:</strong></p>
+        <div id="logContainer"></div>
+    </div>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+    
+    <script>
+        const logContainer = document.getElementById('logContainer');
+        
+        function addLog(message, status = 'info') {
+            const p = document.createElement('p');
+            const icon = status === 'success' ? '✓' : status === 'error' ? '✕' : 'ℹ';
+            p.innerHTML = `<span class="${status}">${icon} ${message}</span>`;
+            logContainer.appendChild(p);
+            console.log(`[${status.toUpperCase()}]`, message);
+        }
+        
+        // Immediate checks
+        addLog('Test file loaded', 'success');
+        
+        // Check if functions exist
+        if (typeof updateCartBadge === 'function') {
+            addLog('common.js: updateCartBadge function found', 'success');
+        } else {
+            addLog('common.js: updateCartBadge function NOT found', 'error');
+        }
+        
+        if (typeof loadNavbar === 'function') {
+            addLog('navbar.js: loadNavbar function found', 'success');
+        } else {
+            addLog('navbar.js: loadNavbar function NOT found', 'error');
+        }
+        
+        if (typeof loadFooter === 'function') {
+            addLog('footer.js: loadFooter function found', 'success');
+        } else {
+            addLog('footer.js: loadFooter function NOT found', 'error');
+        }
+        
+        // Wait for DOMContentLoaded
+        window.addEventListener('load', function() {
+            addLog('DOM fully loaded', 'success');
+            
+            // Check if elements exist
+            if (document.querySelector('.cart-badge')) {
+                addLog('Cart badge element found in DOM', 'success');
+            } else {
+                addLog('Cart badge element NOT found in DOM', 'warning');
+            }
+            
+            if (document.querySelector('.header')) {
+                addLog('Header element found in DOM', 'success');
+            } else {
+                addLog('Header element NOT found in DOM', 'warning');
+            }
+            
+            if (document.querySelector('.footer')) {
+                addLog('Footer element found in DOM', 'success');
+            } else {
+                addLog('Footer element NOT found in DOM', 'warning');
+            }
+            
+            if (document.querySelector('.search-bar')) {
+                addLog('Search bar element found in DOM', 'success');
+            } else {
+                addLog('Search bar element NOT found in DOM', 'warning');
+            }
+        });
+        
+        // Log any errors
+        window.addEventListener('error', function(event) {
+            addLog(`JavaScript Error: ${event.message} at line ${event.lineno}`, 'error');
+        });
+    </script>
+</body>
+</html>

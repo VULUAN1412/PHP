@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sale - Giày Thể Thao</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/trangchu.css">
+    <link rel="stylesheet" href="../css/sale.css">
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+</head>
+<body>
+    <main class="sale-page">
+        <div class="container">
+            <div class="sale-header">
+                <h1>🎉 KHUYẾN Mại KHỦNG 🎉</h1>
+                <p>Giảm giá đến 40% cho sản phẩm</p>
+            </div>
+
+            <div class="promotion-banner">
+                <h2>SALE ĐẶC BIỆT HÔM NAY!</h2>
+                <p>Hết hàng không bồi thường - Mua ngay khi còn hàng</p>
+                <p style="margin-top: 10px; font-size: 24px;">⏰ Chỉ còn lại: <span id="countdown">23:59:59</span></p>
+            </div>
+
+            <div class="sale-products">
+                <h2 class="section-title">Sản phẩm khuyến mại</h2>
+                <div class="products-grid">
+                    <div class="product-card sale-badge">
+                        <div class="product-image">
+                            <div class="discount-badge">-30%</div>
+                            <img src="../images/giaydabong/predator 20.3.jpg" alt="Giày đá bóng Predator">
+                        </div>
+                        <h3 class="product-name">Giày đá bóng Predator 20.3</h3>
+                        <p class="product-price">1.400.000<span>đ</span></p>
+                        <p class="product-price-old">2.000.000đ</p>
+                    </div>
+
+                    <div class="product-card sale-badge">
+                        <div class="product-image">
+                            <div class="discount-badge">-25%</div>
+                            <img src="../images/giaychaybo/giày chạy bộ nam adidas.jpg" alt="Giày chạy bộ Adidas">
+                        </div>
+                        <h3 class="product-name">Giày chạy bộ Adidas</h3>
+                        <p class="product-price">1.500.000<span>đ</span></p>
+                        <p class="product-price-old">2.000.000đ</p>
+                    </div>
+
+                    <div class="product-card sale-badge">
+                        <div class="product-image">
+                            <div class="discount-badge">-40%</div>
+                            <img src="../images/phukiengiay/tất yonex.jpg" alt="Phụ kiện - Tất Yonex">
+                        </div>
+                        <h3 class="product-name">Phụ kiện - Tất Yonex</h3>
+                        <p class="product-price">280.000<span>đ</span></p>
+                        <p class="product-price-old">470.000đ</p>
+                    </div>
+
+                    <div class="product-card sale-badge">
+                        <div class="product-image">
+                            <div class="discount-badge">-35%</div>
+                            <img src="../images/giaythoitrang/retro leadther.jpg" alt="Giày thời trang Retro">
+                        </div>
+                        <h3 class="product-name">Giày thời trang Retro Leather</h3>
+                        <p class="product-price">750.000<span>đ</span></p>
+                        <p class="product-price-old">1.150.000đ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const tomorrow = new Date(now);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(0, 0, 0, 0);
+
+            const diff = tomorrow - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').textContent = 
+                `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Product card click
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', function() {
+                window.location.href = '../html/Thongtingiay.html';
+            });
+        });
+    </script>
+    <script src="../js/common.js"></script>
+</body>
+</html>

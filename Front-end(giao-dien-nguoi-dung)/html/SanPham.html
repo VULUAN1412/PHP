@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - Giày Thể Thao</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/trangchu.css">
+    <link rel="stylesheet" href="../css/sanpham.css">
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+</head>
+<body>
+    <main class="products-page">
+        <div class="container">
+           
+
+            <div class="products-container">
+                <!-- Sidebar Filter -->
+                <aside class="products-sidebar">
+                    <div class="filter-section">
+                        <h3 class="filter-title">Danh mục</h3>
+                        <div class="filter-group">
+                            <label class="filter-item">
+                                <input type="radio" name="category" class="category-filter-all" value="all" checked>
+                                <span>Tất cả sản phẩm</span>
+                            </label>
+                            <label class="filter-item">
+                                <input type="checkbox" class="category-filter" value="chay-bo">
+                                <span>Giày chạy bộ</span>
+                            </label>
+                            <label class="filter-item">
+                                <input type="checkbox" class="category-filter" value="the-thao">
+                                <span>Giày thể thao</span>
+                            </label>
+                            <label class="filter-item">
+                                <input type="checkbox" class="category-filter" value="da-bong">
+                                <span>Giày đá bóng</span>
+                            </label>
+                            <label class="filter-item">
+                                <input type="checkbox" class="category-filter" value="thoi-trang">
+                                <span>Giày thời trang</span>
+                            </label>
+                            <label class="filter-item">
+                                <input type="checkbox" class="category-filter" value="phu-kien">
+                                <span>Phụ kiện</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">Khoảng giá</h3>
+                        <div class="filter-group">
+                            <label class="filter-item">
+                                <input type="radio" name="price" class="price-filter" value="all" checked>
+                                <span>Tất cả giá</span>
+                            </label>
+                            <label class="filter-item">
+                                <input type="radio" name="price" class="price-filter" value="0-500">
+                                <span>Dưới 500.000đ</span>
+                            </label>
+                            <label class="filter-item">
+                                <input type="radio" name="price" class="price-filter" value="500-1000">
+                                <span>500.000đ - 1.000.000đ</span>
+                            </label>
+                            <label class="filter-item">
+                                <input type="radio" name="price" class="price-filter" value="1000-2000">
+                                <span>1.000.000đ - 2.000.000đ</span>
+                            </label>
+                            <label class="filter-item">
+                                <input type="radio" name="price" class="price-filter" value="2000">
+                                <span>Trên 2.000.000đ</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">Trạng thái</h3>
+                        <div class="filter-group">
+                            <label class="filter-item">
+                                <input type="radio" name="status" class="status-filter" value="all" checked>
+                                <span>Tất cả</span>
+                            </label>
+                            <label class="filter-item">
+                                <input type="radio" name="status" class="status-filter" value="new">
+                                <span>Mới nhất</span>
+                            </label>
+                            <label class="filter-item">
+                                <input type="radio" name="status" class="status-filter" value="sale">
+                                <span>Đang giảm giá</span>
+                            </label>
+                            <label class="filter-item">
+                                <input type="radio" name="status" class="status-filter" value="bestseller">
+                                <span>Bán chạy</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="reset-filter">Xóa bộ lọc</button>
+                </aside>
+
+                <!-- Main Content -->
+                <section class="products-main">
+                    <div class="products-toolbar">
+                        <div class="toolbar-left">
+                            <span class="products-count">Hiển thị <span id="productCount">8</span> sản phẩm</span>
+                        </div>
+                        <div class="toolbar-right">
+                            <select id="sortBy" class="sort-select">
+                                <option value="default">Sắp xếp</option>
+                                <option value="newest">Mới nhất</option>
+                                <option value="price-asc">Giá: Thấp đến Cao</option>
+                                <option value="price-desc">Giá: Cao đến Thấp</option>
+                                <option value="popular">Phổ biến nhất</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded here -->
+                    </div>
+
+                    <div class="pagination" id="pagination">
+                        <!-- Pagination will be loaded here -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/sanpham.js"></script>
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - Giày Thể Thao</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/thongtingiay.css">
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+</head>
+<body>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="Trangchu.html">Trang chủ</a>
+                <span>></span>
+                <a href="SanPham.html">Sản phẩm</a>
+                <span>></span>
+                <span id="productBreadcrumb">Giày chạy bộ Premium</span>
+            </div>
+
+            <section class="product-detail-section">
+                <div class="product-detail-container">
+                    <!-- Product Images -->
+                    <div class="product-images">
+                        <div class="main-image">
+                            <img id="mainImage" src="../images/giaychaybo/giày chạy bộ nam nike.jpg" alt="Giày chạy bộ Premium">
+                            <div class="sale-badge">Sale 30%</div>
+                        </div>
+
+                        <div class="thumbnail-images">
+                            <img class="thumbnail active" src="../images/giaychaybo/giày chạy bộ nam nike.jpg" alt="View 1" onclick="changeImage(this)">
+                            <img class="thumbnail" src="../images/giaychaybo/giày chạy bộ nam adidas.jpg" alt="View 2" onclick="changeImage(this)">
+                            <img class="thumbnail" src="../images/giaychaybo/giày chạy bộ nike ari winflo 9.jpg" alt="View 3" onclick="changeImage(this)">
+                            <img class="thumbnail" src="../images/giaychaybo/giày chạy bộ nữ adidas.jpg" alt="View 4" onclick="changeImage(this)">
+                        </div>
+                    </div>
+
+                    <!-- Product Info -->
+                    <div class="product-info">
+                        <h1 id="productName">Giày chạy bộ Premium</h1>
+
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-text">4.5/5 (128 đánh giá)</span>
+                        </div>
+
+                        <div class="price-section">
+                            <span class="price-old" id="priceOld">1.890.000₫</span>
+                            <span class="price-new" id="priceNew">1.290.000₫</span>
+                            <span class="discount-badge">-30%</span>
+                        </div>
+
+                        <div class="product-status">
+                            <span class="stock-status in-stock">
+                                <i class="fas fa-check-circle"></i> Còn hàng
+                            </span>
+                            <span class="sold-count">Đã bán: <strong>1.250</strong></span>
+                        </div>
+
+                        <!-- Options -->
+                        <div class="options">
+                            <div class="option-group">
+                                <label>Kích cỡ:</label>
+                                <div class="size-options">
+                                    <button class="size-btn">35</button>
+                                    <button class="size-btn">36</button>
+                                    <button class="size-btn active">37</button>
+                                    <button class="size-btn">38</button>
+                                    <button class="size-btn">39</button>
+                                    <button class="size-btn">40</button>
+                                    <button class="size-btn">41</button>
+                                    <button class="size-btn">42</button>
+                                </div>
+                            </div>
+
+                            <div class="option-group">
+                                <label>Màu sắc:</label>
+                                <div class="color-options">
+                                    <button class="color-btn active" style="background-color: #000;" title="Đen"></button>
+                                    <button class="color-btn" style="background-color: #fff; border: 2px solid #ccc;" title="Trắng"></button>
+                                    <button class="color-btn" style="background-color: #0066cc;" title="Xanh dương"></button>
+                                    <button class="color-btn" style="background-color: #ff3333;" title="Đỏ"></button>
+                                </div>
+                            </div>
+
+                            <div class="option-group">
+                                <label>Số lượng:</label>
+                                <div class="quantity-input">
+                                    <button class="qty-btn" onclick="decreaseQty()">-</button>
+                                    <input type="number" id="quantity" value="1" min="1" max="10">
+                                    <button class="qty-btn" onclick="increaseQty()">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <button class="btn btn-add-cart" onclick="addProductToCart()">
+                                <i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng
+                            </button>
+                            <button class="btn btn-buy-now" onclick="buyNow()">
+                                <i class="fas fa-bolt"></i> Mua ngay
+                            </button>
+                            <button class="btn btn-wishlist" onclick="toggleWishlist()">
+                                <i class="far fa-heart"></i> Yêu thích
+                            </button>
+                        </div>
+
+                        <!-- Shipping Info -->
+                        <div class="shipping-info">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="info-content">
+                                    <strong>Giao hàng toàn quốc</strong>
+                                    <p>Vận chuyển miễn phí cho đơn từ 500K</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="info-content">
+                                    <strong>Hàng chính hãng 100%</strong>
+                                    <p>Bảo hành chính thức từ nhà sản xuất</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-undo"></i>
+                                </div>
+                                <div class="info-content">
+                                    <strong>Đổi trả trong 7 ngày</strong>
+                                    <p>Đổi trả miễn phí nếu không hài lòng</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Store Info -->
+                        <div class="store-info">
+                            <h3>Thông tin cửa hàng</h3>
+                            <p><strong>Giày Thể Thao</strong></p>
+                            <p><i class="fas fa-map-marker-alt"></i> Hà Nội, Hồ Chí Minh</p>
+                            <p><i class="fas fa-phone"></i> 0385217674</p>
+                            <p><i class="fas fa-envelope"></i> trungkhoa0209@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tabs Section -->
+            <section class="tabs-section">
+                <div class="tabs">
+                    <button class="tab-button active" onclick="switchTab('description')">
+                        <i class="fas fa-align-left"></i> Mô tả
+                    </button>
+                    <button class="tab-button" onclick="switchTab('specifications')">
+                        <i class="fas fa-th-list"></i> Thông số
+                    </button>
+                    <button class="tab-button" onclick="switchTab('reviews')">
+                        <i class="fas fa-comments"></i> Đánh giá (128)
+                    </button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- Description Tab -->
+                    <div id="description" class="tab-pane active">
+                        <h3>Mô tả sản phẩm</h3>
+                        <p>Giày chạy bộ Premium được thiết kế với công nghệ tiên tiến nhất, cung cấp sự thoải mái và hiệu suất tối đa cho những người yêu thích chạy bộ.</p>
+                        <h4>Đặc điểm nổi bật:</h4>
+                        <ul>
+                            <li>Công nghệ đệm Responsive Cushioning cho sự thoải mái vượt trội</li>
+                            <li>Đế ngoài cao su lâu dài với khả năng chống trượt tuyệt vời</li>
+                            <li>Vật liệu mesh thoáng khí giúp chân luôn khô thoáng</li>
+                            <li>Thiết kế ergonomic hỗ trợ cung chân tự nhiên</li>
+                            <li>Trọng lượng nhẹ chỉ 270g/chiếc</li>
+                        </ul>
+                    </div>
+
+                    <!-- Specifications Tab -->
+                    <div id="specifications" class="tab-pane">
+                        <h3>Thông số kỹ thuật</h3>
+                        <table class="specs-table">
+                            <tr>
+                                <td><strong>Thương hiệu</strong></td>
+                                <td>Premium Brand</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chất liệu</strong></td>
+                                <td>Mesh + Synthetic</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Đệm</strong></td>
+                                <td>Responsive Cushioning</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Trọng lượng</strong></td>
+                                <td>270g/chiếc</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Loại hoạt động</strong></td>
+                                <td>Chạy bộ</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bảo hành</strong></td>
+                                <td>12 tháng</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nước sản xuất</strong></td>
+                                <td>Việt Nam</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div id="reviews" class="tab-pane">
+                        <h3>Đánh giá khách hàng (128 đánh giá)</h3>
+
+                        <div class="reviews-summary">
+                            <div class="average-rating">
+                                <div class="big-rating">4.5</div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p>Dựa trên 128 đánh giá</p>
+                            </div>
+
+                            <div class="rating-breakdown">
+                                <div class="rating-bar">
+                                    <span>5 ★</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 75%;"></div>
+                                    </div>
+                                    <span>96</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>4 ★</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 20%;"></div>
+                                    </div>
+                                    <span>25</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>3 ★</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 3%;"></div>
+                                    </div>
+                                    <span>4</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>2 ★</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 1%;"></div>
+                                    </div>
+                                    <span>2</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>1 ★</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 1%;"></div>
+                                    </div>
+                                    <span>1</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <strong>Nguyễn Văn A</strong>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="review-date">5 ngày trước</span>
+                                </div>
+                                <p class="review-title">Sản phẩm rất tốt!</p>
+                                <p class="review-text">Giày chạy bộ này rất thoải mái, chất lượng tốt, giao hàng nhanh. Rất hài lòng với mua lần này.</p>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <strong>Trần Thị B</strong>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="review-date">10 ngày trước</span>
+                                </div>
+                                <p class="review-title">Hàng chất lượng</p>
+                                <p class="review-text">Giày đúng như mô tả, form dáng chuẩn, mix và match được nhiều outfit. Giới thiệu bạn bè.</p>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-load-more">Xem thêm đánh giá</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Products -->
+            <section class="related-section">
+                <h2 class="section-title">Sản phẩm liên quan</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="../images/giaythethao/nike ari max.jpg" alt="Giày thể thao Casual">
+                        </div>
+                        <h3 class="product-name">Giày thể thao Casual</h3>
+                        <p class="product-price">950.000<span>đ</span></p>
+                        <button class="btn btn-small" onclick="viewProduct(2)">Xem chi tiết</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="../images/giaythethao/adidas galaxy 6.jpg" alt="Giày tập Gym">
+                        </div>
+                        <h3 class="product-name">Giày tập Gym</h3>
+                        <p class="product-price">1.150.000<span>đ</span></p>
+                        <button class="btn btn-small" onclick="viewProduct(3)">Xem chi tiết</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="../images/giaythoitrang/retro oxford.jpg" alt="Giày chạy bộ X">
+                        </div>
+                        <h3 class="product-name">Giày chạy bộ X</h3>
+                        <p class="product-price">1.450.000<span>đ</span></p>
+                        <button class="btn btn-small" onclick="viewProduct(4)">Xem chi tiết</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="../images/giaydabong/adidas f50 pro.jpg" alt="Giày bóng rổ">
+                        </div>
+                        <h3 class="product-name">Giày bóng rổ</h3>
+                        <p class="product-price">1.890.000<span>đ</span></p>
+                        <button class="btn btn-small" onclick="viewProduct(5)">Xem chi tiết</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Về Giày Thể Thao</h3>
+                    <p>Cửa hàng chuyên bán giày thể thao chính hãng, cung cấp các thương hiệu hàng đầu thế giới.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p>Email: trungkhoa0209@gmail.com</p>
+                    <p>Hotline: 0385217674</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Theo dõi</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Giày Thể Thao. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/user/thongtingiay.js"></script>
+    
+    <script>
+        // Dữ liệu sản phẩm
+        const products = {
+            1: {
+                id: 1,
+                name: "Giày chạy bộ Nike Ari Winflo 9",
+                price: 1290000,
+                priceOld: 1890000,
+                discount: 30,
+                image: "../images/giaychaybo/giày chạy bộ nike ari winflo 9.jpg",
+                thumbnails: [
+                    "../images/giaychaybo/giày chạy bộ nike ari winflo 9.jpg",
+                    "../images/giaychaybo/giày chạy bộ nam nike.jpg",
+                    "../images/giaychaybo/giày chạy bộ nam adidas.jpg",
+                    "../images/giaychaybo/giày chạy bộ nữ adidas.jpg"
+                ],
+                description: "Giày chạy bộ Nike Ari Winflo 9 được thiết kế với công nghệ tiên tiến nhất, cung cấp sự thoải mái và hiệu suất tối đa cho những người yêu thích chạy bộ.",
+                features: [
+                    "Công nghệ đệm Responsive Cushioning cho sự thoải mái vượt trội",
+                    "Đế ngoài cao su lâu dài với khả năng chống trượt tuyệt vời",
+                    "Vật liệu mesh thoáng khí giúp chân luôn khô thoáng",
+                    "Thiết kế ergonomic hỗ trợ cung chân tự nhiên",
+                    "Trọng lượng nhẹ chỉ 270g/chiếc"
+                ]
+            },
+            2: {
+                id: 2,
+                name: "Giày thể thao Nike Ari Max",
+                price: 950000,
+                priceOld: 1350000,
+                discount: 25,
+                image: "../images/giaythethao/nike ari max.jpg",
+                thumbnails: [
+                    "../images/giaythethao/nike ari max.jpg",
+                    "../images/giaythethao/adidas galaxy 6.jpg",
+                    "../images/giaythethao/nike ari max.jpg",
+                    "../images/giaythethao/adidas galaxy 6.jpg"
+                ],
+                description: "Giày thể thao Nike Ari Max - đa năng, phù hợp cho nhiều hoạt động thể thao và mặc hàng ngày với phong cách năng động."
+            },
+            3: {
+                id: 3,
+                name: "Giày đá bóng Predator 20.3",
+                price: 1400000,
+                priceOld: 2000000,
+                discount: 30,
+                image: "../images/giaydabong/predator 20.3.jpg",
+                thumbnails: [
+                    "../images/giaydabong/predator 20.3.jpg",
+                    "../images/giaydabong/adidas f50 pro.jpg",
+                    "../images/giaydabong/predator 20.3.jpg",
+                    "../images/giaydabong/adidas f50 pro.jpg"
+                ],
+                description: "Giày đá bóng Predator 20.3 - chuyên dụng cho môn thể thao, cung cấp độ bám tốt và hỗ trợ hiệu năng cao trên sân."
+            },
+            4: {
+                id: 4,
+                name: "Giày thể thao Adidas Galaxy 6",
+                price: 1150000,
+                priceOld: 1650000,
+                discount: 30,
+                image: "../images/giaythethao/adidas galaxy 6.jpg",
+                thumbnails: [
+                    "../images/giaythethao/adidas galaxy 6.jpg",
+                    "../images/giaythethao/nike ari max.jpg",
+                    "../images/giaythethao/adidas galaxy 6.jpg",
+                    "../images/giaythethao/nike ari max.jpg"
+                ],
+                description: "Giày thể thao Adidas Galaxy 6 - kết hợp giữa phong cách và tiện ích, phù hợp cho mọi lúc mọi nơi."
+            },
+            5: {
+                id: 5,
+                name: "Giày chạy bộ Adidas",
+                price: 1500000,
+                priceOld: 2000000,
+                discount: 25,
+                image: "../images/giaychaybo/giày chạy bộ nam adidas.jpg",
+                thumbnails: [
+                    "../images/giaychaybo/giày chạy bộ nam adidas.jpg",
+                    "../images/giaychaybo/giày chạy bộ nike ari winflo 9.jpg",
+                    "../images/giaychaybo/giày chạy bộ nam nike.jpg",
+                    "../images/giaychaybo/giày chạy bộ nữ adidas.jpg"
+                ],
+                description: "Giày chạy bộ Adidas cao cấp với công nghệ cushioning tốt nhất."
+            },
+            6: {
+                id: 6,
+                name: "Giày Sneaker Elly",
+                price: 850000,
+                priceOld: 1200000,
+                discount: 29,
+                image: "../images/giaythoitrang/sneaker elly.jpg",
+                thumbnails: [
+                    "../images/giaythoitrang/sneaker elly.jpg",
+                    "../images/giaythoitrang/retro leadther.jpg",
+                    "../images/giaythoitrang/retro oxford.jpg",
+                    "../images/giaythoitrang/sneaker elly.jpg"
+                ],
+                description: "Giày Sneaker Elly - thiết kế hiện đại, phù hợp với phong cách thời trang đương đại."
+            },
+            7: {
+                id: 7,
+                name: "Phụ kiện - Tất Yonex",
+                price: 280000,
+                priceOld: 470000,
+                discount: 40,
+                image: "../images/phukiengiay/tất yonex.jpg",
+                thumbnails: [
+                    "../images/phukiengiay/tất yonex.jpg",
+                    "../images/phukiengiay/tất yonex.jpg",
+                    "../images/phukiengiay/tất yonex.jpg",
+                    "../images/phukiengiay/tất yonex.jpg"
+                ],
+                description: "Tất Yonex chất lượng cao, thoáng khí, phù hợp cho chơi thể thao."
+            },
+            8: {
+                id: 8,
+                name: "Giày thời trang Retro Leather",
+                price: 750000,
+                priceOld: 1150000,
+                discount: 35,
+                image: "../images/giaythoitrang/retro leadther.jpg",
+                thumbnails: [
+                    "../images/giaythoitrang/retro leadther.jpg",
+                    "../images/giaythoitrang/retro oxford.jpg",
+                    "../images/giaythoitrang/sneaker elly.jpg",
+                    "../images/giaythoitrang/retro leadther.jpg"
+                ],
+                description: "Giày thời trang Retro Leather - kết hợp phong cách cổ điển với chất lượng hiện đại."
+            }
+        };
+
+        // Lấy ID từ URL
+        function getProductIdFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id') || 1;
+        }
+
+        // Cập nhật thông tin sản phẩm
+        function loadProductInfo() {
+            const productId = parseInt(getProductIdFromURL());
+            const product = products[productId] || products[1];
+
+            // Cập nhật breadcrumb
+            document.getElementById('productBreadcrumb').textContent = product.name;
+
+            // Cập nhật tên sản phẩm
+            document.getElementById('productName').textContent = product.name;
+
+            // Cập nhật giá
+            document.getElementById('priceOld').textContent = product.priceOld.toLocaleString('vi-VN') + '₫';
+            document.getElementById('priceNew').textContent = product.price.toLocaleString('vi-VN') + '₫';
+            
+            // Cập nhật ảnh chính
+            document.getElementById('mainImage').src = product.image;
+            
+            // Cập nhật thumbnail images
+            const thumbnails = document.querySelectorAll('.thumbnail-images .thumbnail');
+            thumbnails.forEach((thumb, index) => {
+                thumb.src = product.thumbnails[index] || product.image;
+                thumb.alt = 'View ' + (index + 1);
+            });
+
+            // Cập nhật ảnh active
+            document.querySelector('.thumbnail.active').src = product.image;
+
+            // Cập nhật title
+            document.title = product.name + ' - Giày Thể Thao';
+        }
+
+        // Chạy khi trang load
+        document.addEventListener('DOMContentLoaded', loadProductInfo);
+
+        // Hàm xem chi tiết sản phẩm liên quan
+        function viewProduct(id) {
+            window.location.href = 'Thongtingiay.html?id=' + id;
+        }
+    </script>
+</body>
+</html>

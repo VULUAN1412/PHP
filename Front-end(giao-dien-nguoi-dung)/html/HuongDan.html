@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn - Giày Thể Thao</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/trangchu.css">
+    <link rel="stylesheet" href="../css/huongdan.css">
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+</head>
+<body>
+
+    <main class="guide-page">
+        <div class="container">
+            <div class="guide-header">
+                <h1>📋 HƯỚNG DẪN</h1>
+                <p>Tìm hiểu cách thức hoạt động của cửa hàng</p>
+            </div>
+
+            <div class="guide-tabs">
+                <button class="guide-tab active" onclick="switchTab('shipping')">🚚 Vận chuyển</button>
+                <button class="guide-tab" onclick="switchTab('payment')">💳 Thanh toán</button>
+                <button class="guide-tab" onclick="switchTab('return')">↩️ Đổi trả</button>
+            </div>
+
+            <!-- Shipping Guide -->
+            <div id="shipping" class="guide-content active">
+                <div class="guide-section">
+                    <h2>Hướng dẫn vận chuyển</h2>
+                    
+                    <div class="guide-item">
+                        <h3>🚚 Phương thức vận chuyển</h3>
+                        <ul>
+                            <li><strong>Giao hàng tiêu chuẩn:</strong> 2-3 ngày (Miễn phí cho đơn từ 500.000đ)</li>
+                            <li><strong>Giao hàng nhanh:</strong> 1 ngày (50.000đ)</li>
+                            <li><strong>Giao hàng cùng ngày:</strong> 2 giờ (100.000đ - Chỉ TP.HCM)</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-item">
+                        <h3>📦 Quy trình vận chuyển</h3>
+                        <ol>
+                            <li>Xác nhận đơn hàng (30 phút)</li>
+                            <li>Chuẩn bị hàng tại kho (1-2 giờ)</li>
+                            <li>Giao cho đơn vị vận chuyển (2-4 giờ)</li>
+                            <li>Giao hàng đến tay khách hàng (2-3 ngày)</li>
+                        </ol>
+                    </div>
+
+                    <div class="guide-item">
+                        <h3>🗺️ Phạm vi giao hàng</h3>
+                        <p>Chúng tôi giao hàng tới tất cả các tỉnh thành trên toàn quốc và có thể giao quốc tế với phí tính riêng.</p>
+                    </div>
+
+                    <div class="guide-item">
+                        <h3>📞 Liên hệ vận chuyển</h3>
+                        <p>Nếu có vấn đề về vận chuyển, vui lòng liên hệ: <strong>0385217674</strong> hoặc <strong>support@giaythethao.com</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Guide -->
+            <div id="payment" class="guide-content">
+                <div class="guide-section">
+                    <h2>Hướng dẫn thanh toán</h2>
+                    
+                    <div class="guide-item">
+                        <h3>💳 Phương thức thanh toán</h3>
+                        <ul>
+                            <li><strong>Thanh toán khi nhận hàng (COD):</strong> Không mất phí</li>
+                            <li><strong>Chuyển khoản ngân hàng:</strong> Miễn phí, xác nhận trong 24h</li>
+                            <li><strong>Thẻ tín dụng/Debit:</strong> Visa, Mastercard, JCB</li>
+                            <li><strong>Ví điện tử:</strong> Momo, ZaloPay, MoMoPayment</li>
+                            <li><strong>Trả góp 0%:</strong> Cho đơn từ 3,000.000đ (qua các đối tác tài chính)</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-item">
+                        <h3>🏦 Thông tin chuyển khoản</h3>
+                        <p><strong>Ngân hàng:</strong> Vietcombank<br/>
+                        <strong>Tên tài khoản:</strong> Giày Thể Thao<br/>
+                        <strong>Số tài khoản:</strong> 1234567890<br/>
+                        <strong>Chi nhánh:</strong> TP.HCM</p>
+                    </div>
+
+                    <div class="guide-item">
+                        <h3>⚠️ Lưu ý thanh toán</h3>
+                        <ul>
+                            <li>Vui lòng thanh toán đầy đủ giá trị đơn hàng</li>
+                            <li>Hoàn tiền được xử lý trong 3-5 ngày làm việc</li>
+                            <li>Không hoàn tiền cho đơn hàng dùng mã giảm giá (trừ lỗi cửa hàng)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Return Guide -->
+            <div id="return" class="guide-content">
+                <div class="guide-section">
+                    <h2>Hướng dẫn đổi trả</h2>
+                    
+                    <div class="guide-item">
+                        <h3>↩️ Chính sách đổi trả</h3>
+                        <ul>
+                            <li>Đổi trả trong <strong>7 ngày</strong> từ khi nhận hàng</li>
+                            <li>Sản phẩm phải chưa sử dụng, còn tag nguyên bản</li>
+                            <li>Có hóa đơn mua hàng</li>
+                            <li>Hộp giày và phụ kiện phải nguyên vẹn</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-item">
+                        <h3>📋 Quy trình đổi trả</h3>
+                        <ol>
+                            <li>Liên hệ để thông báo muốn đổi trả: <strong>0385217674</strong></li>
+                            <li>Gửi hình ảnh sản phẩm để xác nhận</li>
+                            <li>In tem đổi trả và gửi lại</li>
+                            <li>Chúng tôi kiểm tra trong 2-3 ngày</li>
+                            <li>Xác nhận đổi trả hoặc hoàn tiền</li>
+                        </ol>
+                    </div>
+
+                    <div class="guide-item">
+                        <h3>💰 Phí đổi trả</h3>
+                        <ul>
+                            <li><strong>Đổi khác size/màu:</strong> Khách hàng chịu phí vận chuyển chiều đi (~20-50k)</li>
+                            <li><strong>Lỗi cửa hàng:</strong> Miễn phí cả 2 chiều</li>
+                            <li><strong>Hoàn tiền:</strong> Không có phí, trừ chi phí vận chuyển ban đầu</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-item">
+                        <h3>🔒 Bảo hành</h3>
+                        <p>Chúng tôi cung cấp bảo hành sản phẩm trong <strong>12 tháng</strong> từ ngày mua cho các khiếm khuyết về chất lượng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <script>
+        function switchTab(tabName) {
+            // Hide all contents
+            const contents = document.querySelectorAll('.guide-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.guide-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Show selected content and activate tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+    <script src="../js/common.js"></script>
+</body>
+</html>

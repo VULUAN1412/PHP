@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Giày Thể Thao</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <i class="fas fa-shoe-prints"></i>
+                <span>Giày Thể Thao</span>
+            </div>  
+
+            <nav class="sidebar-menu">
+                <ul>
+                    <li><a href="#" class="menu-item active"><i class="fas fa-chart-line"></i>Bảng điều khiển</a></li>
+                    <li><a href="#" class="menu-item"><i class="fas fa-users"></i>Người dùng</a></li>
+                    <li><a href="#" class="menu-item"><i class="fas fa-box"></i>Sản phẩm</a></li>
+                    <li><a href="#" class="menu-item"><i class="fas fa-shopping-cart"></i>Đơn hàng</a></li>
+                    <li><a href="#" class="menu-item"><i class="fas fa-chart-bar"></i>Phân tích</a></li>
+                    <li><a href="#" class="menu-item"><i class="fas fa-file-alt"></i>Báo cáo</a></li>
+                    <li><a href="#" class="menu-item"><i class="fas fa-cog"></i>Cài đặt</a></li>
+                    <li><a href="#" class="menu-item"><i class="fas fa-envelope"></i>Tin nhắn</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+                    <div class="breadcrumb">
+                        <span>25 Tháng 10, 2024 | 10:45 SA</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn"><i class="fas fa-search"></i></button>
+                    <button class="header-btn"><i class="fas fa-bell"></i><span class="notification-badge">3</span></button>
+                    <div class="user-profile">
+                        <img src="https://via.placeholder.com/32" alt="User">
+                        <span>Devoyni</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content" id="dashboardContent">
+                <div class="welcome-section" id="welcomeSection">
+                    <h1>Chào mừng trở lại, Devoyni</h1>
+                    <p>Dưới đây là thông tin về cửa hàng của bạn hôm nay</p>
+                </div>
+
+                <!-- KPI Cards -->
+                <div class="kpi-cards">
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Tổng người dùng</span>
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="kpi-value">124.500</div>
+                        <div class="kpi-chart"><canvas id="chart1"></canvas></div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Doanh thu</span>
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="kpi-value">1.250.000₫</div>
+                        <div class="kpi-chart"><canvas id="chart2"></canvas></div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Phiên hoạt động</span>
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div class="kpi-value">4.762</div>
+                        <div class="kpi-chart"><canvas id="chart3"></canvas></div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Tỷ lệ chuyển đổi</span>
+                        </div>
+                        <div class="kpi-value">8.5%</div>
+                        <div class="pie-chart">
+                            <div class="pie">
+                                <svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40" fill="none" stroke="#00bcd4" stroke-width="8" stroke-dasharray="68 100" style="transform: rotate(-90deg); transform-origin: 50% 50%;"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <div class="chart-container">
+                        <h3>Tăng trưởng người dùng hàng tháng</h3>
+                        <div class="chart-placeholder">
+                            <canvas id="monthlyChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3>Phân phối doanh số</h3>
+                        <div class="chart-placeholder">
+                            <div class="pie-chart-container">
+                                <canvas id="pieChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="recent-activity">
+                    <h3>Hoạt động gần đây</h3>
+                    <table class="activity-table">
+                        <tr>
+                            <td><span class="status badge-success">Hoàn thành</span></td>
+                            <td>Đơn hàng #2024-001 hoàn thành</td>
+                            <td>12 Tháng 10, 2024</td>
+                        </tr>
+                        <tr>
+                            <td><span class="status badge-warning">Đang xử lý</span></td>
+                            <td>Đăng ký người dùng mới</td>
+                            <td>10 Tháng 10, 2024</td>
+                        </tr>
+                        <tr>
+                            <td><span class="status badge-info">Đang kiểm tra</span></td>
+                            <td>Xác minh thanh toán đang diễn ra</td>
+                            <td>8 Tháng 10, 2024</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Reports Section -->
+                <div style="margin-top: 40px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2 style="color: #fff; margin: 0;">Báo cáo</h2>
+                        <button onclick="openReportModal()" style="padding: 10px 20px; background: #00bcd4; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-plus"></i> Tạo báo cáo
+                        </button>
+                    </div>
+
+                    <!-- Report Cards -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                        <!-- Sales Report Card -->
+                        <div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); border: 1px solid #00bcd4; border-radius: 8px; padding: 20px; cursor: pointer; transition: all 0.3s; hover: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(0,188,212,0.3)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <i class="fas fa-chart-bar" style="color: #00bcd4; font-size: 24px; margin-right: 10px;"></i>
+                                <h3 style="color: #00bcd4; margin: 0; font-size: 16px;">Báo cáo bán hàng</h3>
+                            </div>
+                            <p style="color: #b0bec5; margin: 0 0 16px 0; font-size: 13px;">Xem chi tiết doanh số bán hàng hàng tháng</p>
+                            <button onclick="viewReport('sales')" style="width: 100%; padding: 10px; background: rgba(0,188,212,0.2); color: #00bcd4; border: 1px solid #00bcd4; border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.3s;">
+                                <i class="fas fa-eye"></i> Xem báo cáo
+                            </button>
+                        </div>
+
+                        <!-- User Activity Report Card -->
+                        <div style="background: linear-gradient(135deg, #2e1b47 0%, #3d2645 100%); border: 1px solid #00bcd4; border-radius: 8px; padding: 20px; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(0,188,212,0.3)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <i class="fas fa-users" style="color: #00bcd4; font-size: 24px; margin-right: 10px;"></i>
+                                <h3 style="color: #00bcd4; margin: 0; font-size: 16px;">Báo cáo người dùng</h3>
+                            </div>
+                            <p style="color: #b0bec5; margin: 0 0 16px 0; font-size: 13px;">Thống kê hoạt động và tương tác người dùng</p>
+                            <button onclick="viewReport('user-activity')" style="width: 100%; padding: 10px; background: rgba(0,188,212,0.2); color: #00bcd4; border: 1px solid #00bcd4; border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.3s;">
+                                <i class="fas fa-eye"></i> Xem báo cáo
+                            </button>
+                        </div>
+
+                        <!-- Inventory Report Card -->
+                        <div style="background: linear-gradient(135deg, #1b472e 0%, #2d4a3a 100%); border: 1px solid #00bcd4; border-radius: 8px; padding: 20px; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(0,188,212,0.3)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                            <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                                <i class="fas fa-boxes" style="color: #00bcd4; font-size: 24px; margin-right: 10px;"></i>
+                                <h3 style="color: #00bcd4; margin: 0; font-size: 16px;">Báo cáo kho</h3>
+                            </div>
+                            <p style="color: #b0bec5; margin: 0 0 16px 0; font-size: 13px;">Tính trạng tồn kho và sản phẩm</p>
+                            <button onclick="viewReport('inventory')" style="width: 100%; padding: 10px; background: rgba(0,188,212,0.2); color: #00bcd4; border: 1px solid #00bcd4; border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.3s;">
+                                <i class="fas fa-eye"></i> Xem báo cáo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <!-- Create New User Modal -->
+    <div class="modal" id="createUserModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); flex-direction: column; justify-content: center; align-items: center; z-index: 1000;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Tạo người dùng mới</h3>
+                <button class="modal-close" onclick="closeModal('createUserModal')" style="background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; padding: 0; width: 30px; height: 30px;">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Họ và tên</label>
+                    <input type="text" placeholder="Nhập tên" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="nguoidung@example.com" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>Vai trò</label>
+                    <select class="form-input">
+                        <option>Nhân viên bán hàng</option>
+                        <option>Quản trị viên</option>
+                        <option>Biên tập viên</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" placeholder="••••••••" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>Trạng thái</label>
+                    <select class="form-input">
+                        <option value="active">Hoạt động</option>
+                        <option value="inactive">Không hoạt động</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('createUserModal')">Hủy</button>
+                <button class="btn btn-primary" onclick="handleCreateUser()">Tạo người dùng</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Product Modal -->
+    <div class="modal" id="createProductModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); flex-direction: column; justify-content: center; align-items: center; z-index: 1000;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Tạo sản phẩm mới</h3>
+                <button class="modal-close" onclick="closeModal('createProductModal')" style="background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; padding: 0; width: 30px; height: 30px;">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Tên sản phẩm</label>
+                    <input type="text" placeholder="Nhập tên sản phẩm" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>Giá (VNĐ)</label>
+                    <input type="number" placeholder="Nhập giá" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>Số lượng kho</label>
+                    <input type="number" placeholder="Nhập số lượng" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>Trạng thái</label>
+                    <select class="form-input">
+                        <option value="active">Còn hàng</option>
+                        <option value="out">Hết hàng</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('createProductModal')">Hủy</button>
+                <button class="btn btn-primary" onclick="handleCreateProduct()">Tạo sản phẩm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generate Report Modal -->
+    <div class="modal" id="generateReportModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); flex-direction: column; justify-content: center; align-items: center; z-index: 1000;">
+        <div class="modal-content" style="max-width: 900px; max-height: 90vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h3>Tạo báo cáo</h3>
+                <button class="modal-close" onclick="closeModal('generateReportModal')" style="background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; padding: 0; width: 30px; height: 30px;">&times;</button>
+            </div>
+            
+            <!-- Report Tabs -->
+            <div class="report-tabs" style="border-bottom: 1px solid #ddd; margin: 15px 0; display: flex; gap: 0;">
+                <button class="tab-btn active" onclick="switchTab('reportOptions', this)" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 2px solid #00bcd4; color: #00bcd4;">Cấu hình</button>
+                <button class="tab-btn" onclick="switchTab('reportPreview', this); generateReportPreview();" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent; color: #999;">Xem trước</button>
+            </div>
+
+            <!-- Report Options Tab -->
+            <div id="reportOptions" class="tab-content" style="display: block;">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Loại báo cáo</label>
+                        <select class="form-input" id="reportType">
+                            <option value="user-activity">Hoạt động người dùng</option>
+                            <option value="sales">Báo cáo bán hàng</option>
+                            <option value="inventory">Báo cáo kho</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Khoảng thời gian</label>
+                        <input type="date" class="form-input" id="reportStartDate">
+                        <input type="date" class="form-input" id="reportEndDate">
+                    </div>
+                    <div class="form-group">
+                        <label>Định dạng xuất</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" value="pdf"> PDF</label>
+                            <label><input type="checkbox" value="excel"> Excel</label>
+                            <label><input type="checkbox" value="csv" checked> CSV</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Report Preview Tab -->
+            <div id="reportPreview" class="tab-content" style="display: none;">
+                <div class="modal-body" style="padding: 20px;">
+                    <!-- Report Header -->
+                    <div id="reportHeader" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 2px solid #ddd;">
+                        <h3 id="reportTitle" style="color: #00bcd4; margin: 0 0 10px 0;"></h3>
+                        <p id="reportDateRange" style="color: #666; margin: 0; font-size: 12px;"></p>
+                        <p id="reportCreatedTime" style="color: #666; margin: 5px 0 0 0; font-size: 12px;"></p>
+                    </div>
+
+                    <!-- Editable Table -->
+                    <div style="overflow-x: auto; max-height: 350px; overflow-y: auto;">
+                        <table id="reportTable" style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                            <thead>
+                                <tr style="background: #f0f0f0; border-bottom: 2px solid #ddd; position: sticky; top: 0;">
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Summary Stats -->
+                    <div id="reportSummary" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
+                    </div>
+
+                    <!-- Edit Controls -->
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd; display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button onclick="deleteReportRow()" style="padding: 8px 12px; background: #ff5252; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">Xóa dòng chọn</button>
+                        <button onclick="addReportRow()" style="padding: 8px 12px; background: #4caf50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">Thêm dòng mới</button>
+                        <button onclick="refreshReport()" style="padding: 8px 12px; background: #2196f3; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">Làm mới</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('generateReportModal')">Hủy</button>
+                <button class="btn btn-success" id="exportBtn" style="display: inline-block; background: #4caf50;" onclick="handleGenerateReport()">Xuất file</button>
+            </div>
+        </div>
+    </div>
+    <!-- View Order Detail Modal -->
+    <div class="modal" id="viewOrderModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); flex-direction: column; justify-content: center; align-items: center; z-index: 1000;">
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="modal-header">
+                <h3>Chi tiết đơn hàng</h3>
+                <button class="modal-close" onclick="closeModal('viewOrderModal')" style="background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; padding: 0; width: 30px; height: 30px;">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Mã đơn hàng</label>
+                    <input type="text" id="orderDetailId" readonly class="form-input" style="background-color: #3a4a5a; cursor: not-allowed;">
+                </div>
+                <div class="form-group">
+                    <label>Khách hàng</label>
+                    <input type="text" id="orderDetailUser" readonly class="form-input" style="background-color: #3a4a5a; cursor: not-allowed;">
+                </div>
+                <div class="form-group">
+                    <label>Tổng tiền</label>
+                    <input type="text" id="orderDetailTotal" readonly class="form-input" style="background-color: #3a4a5a; cursor: not-allowed;">
+                </div>
+                <div class="form-group">
+                    <label>Trạng thái</label>
+                    <input type="text" id="orderDetailStatus" readonly class="form-input" style="background-color: #3a4a5a; cursor: not-allowed;">
+                </div>
+                <div class="form-group">
+                    <label>Ngày đặt hàng</label>
+                    <input type="text" id="orderDetailDate" readonly class="form-input" style="background-color: #3a4a5a; cursor: not-allowed;">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('viewOrderModal')">Đóng</button>
+            </div>
+        </div>
+    </div>
+    <!-- Design Support Request Modal -->
+    <div class="modal" id="supportModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); flex-direction: column; justify-content: center; align-items: center; z-index: 1000;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-headset"></i> Yêu cầu hỗ trợ</h3>
+                <button class="modal-close" onclick="closeModal('supportModal')" style="background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; padding: 0; width: 30px; height: 30px;">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Loại vấn đề</label>
+                    <select class="form-input">
+                        <option>Vấn đề thiết kế</option>
+                        <option>Yêu cầu tính năng</option>
+                        <option>Báo cáo lỗi</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả/Phản hồi</label>
+                    <p class="help-text">Mô tả chi tiết các vấn đề bạn gặp phải hoặc các ý tưởng/phản hồi bạn muốn chia sẻ.</p>
+                    <textarea class="form-input" rows="4" placeholder="Mô tả vấn đề của bạn..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Phân loại liên quan</label>
+                    <p class="help-text">Chi tiết về các cập nhật hoặc tính năng mới liên quan đến yêu cầu</p>
+                    <input type="text" placeholder="Liên quan đến:" class="form-input">
+                    <div class="priority-group">
+                        <label>Độ ưu tiên: <span class="priority-high">Cao</span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Yêu cầu từ</label>
+                    <p class="help-text">Thông tin người dùng đã yêu cầu</p>
+                    <input type="text" placeholder="Tên người dùng" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>Tệp đính kèm</label>
+                    <div class="file-upload">
+                        <i class="fas fa-file"></i>
+                        <span>Kéo thả tệp tin tại đây</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('supportModal')">Hủy</button>
+                <button class="btn btn-primary" onclick="handleSupportRequest()">Gửi yêu cầu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="../js/admin.js"></script>
+    <script src="../js/common.js"></script>
+</body>
+</html>
